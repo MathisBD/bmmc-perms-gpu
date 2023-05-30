@@ -1,0 +1,42 @@
+cabal-version:      2.4
+name:               kernels
+version:            0.1.0.0
+
+-- The license under which the package is released.
+-- license:
+author:             Mathis BD
+maintainer:         mathis.bouverot@ens.psl.eu
+
+common shared-properties
+    default-language:   Haskell2010
+    build-depends:      base ^>=4.16.4.0,
+                        Unique >= 0.4.7,
+                        random >= 1.2.1,
+                        vector >= 0.13,
+                        extra >= 1.7.13,
+                        tasty >= 1.4.3,
+                        tasty-quickcheck >= 0.10,
+    default-extensions: FlexibleInstances
+
+executable main
+    import:           shared-properties
+    main-is:          Main.hs
+    build-depends:    kernels
+    hs-source-dirs:   exe
+
+test-suite test
+    import:           shared-properties
+    type:             exitcode-stdio-1.0
+    hs-source-dirs:   tests
+    main-is:          Test.hs
+    other-modules:    PermTests,
+                      BmmcTests,
+                      ParmMatrixTests
+    build-depends:    kernels
+    
+library   
+    import:           shared-properties
+    hs-source-dirs:   src
+    exposed-modules:  Bmmc, 
+                      Perm, 
+                      KernelGen   
