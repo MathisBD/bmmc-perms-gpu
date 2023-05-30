@@ -9,14 +9,11 @@ The code uses slightly different notation for bit partitions compared to the pap
 
 # Generating the kernels
 
-The Haskell code that generates permutation kernels is in the directories 'exe' and 'src' and has Quickcheck tests in 'tests'. To run the file exe/Main.hs you will need a working cabal installation. Use :
-cabal run main
+The Haskell code that generates permutation kernels is in the directories 'exe' and 'src' and has Quickcheck tests in 'tests'. To run the file exe/Main.hs you will need a working cabal installation, and use : cabal run main
 
-To run the tests use :
-cabal test --test-show-details=direct
+To run the tests use : cabal test --test-show-details=direct
 
-To cleanup use :
-cabal clean
+To cleanup use : cabal clean
 
 # Benchmarking the kernels
 
